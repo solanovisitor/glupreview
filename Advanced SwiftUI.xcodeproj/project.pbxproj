@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4CB50CDB26F7CD07009931CE /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CB50CDA26F7CD07009931CE /* ExternalAccessory.framework */; };
 		4CB50CE126F7E705009931CE /* ScanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB50CE026F7E705009931CE /* ScanView.swift */; };
+		65430B8127032C89001B6A17 /* JGProgressHUD-SwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 65430B8027032C89001B6A17 /* JGProgressHUD-SwiftUI */; };
 		655F898426FCCBA100AE367B /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655F898026FCCBA000AE367B /* PageViewController.swift */; };
 		655F898526FCCBA100AE367B /* PageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655F898126FCCBA100AE367B /* PageControl.swift */; };
 		655F898626FCCBA100AE367B /* Subview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655F898226FCCBA100AE367B /* Subview.swift */; };
@@ -41,7 +42,7 @@
 
 /* Begin PBXFileReference section */
 		4CB50CDA26F7CD07009931CE /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
-		4CB50CE026F7E705009931CE /* ScanView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScanView.swift; path = "Advanced SwiftUI/Helpers/ScanView.swift"; sourceTree = SOURCE_ROOT; };
+		4CB50CE026F7E705009931CE /* ScanView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScanView.swift; path = "Advanced SwiftUI/ScanView.swift"; sourceTree = SOURCE_ROOT; };
 		655F898026FCCBA000AE367B /* PageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		655F898126FCCBA100AE367B /* PageControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageControl.swift; sourceTree = "<group>"; };
 		655F898226FCCBA100AE367B /* Subview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Subview.swift; sourceTree = "<group>"; };
@@ -78,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65430B8127032C89001B6A17 /* JGProgressHUD-SwiftUI in Frameworks */,
 				8BAEE2252618ECB400DFCDA1 /* StoreKit.framework in Frameworks */,
 				4CB50CDB26F7CD07009931CE /* ExternalAccessory.framework in Frameworks */,
 				8B5995DD261E40040045C8E0 /* CloudKit.framework in Frameworks */,
@@ -95,7 +97,6 @@
 				655F898126FCCBA100AE367B /* PageControl.swift */,
 				655F898026FCCBA000AE367B /* PageViewController.swift */,
 				655F898226FCCBA100AE367B /* Subview.swift */,
-				4CB50CE026F7E705009931CE /* ScanView.swift */,
 				8B80D380260BCBFB008BA135 /* TextfieldIcon.swift */,
 				8B3F54D7261FB5C800C3CB9E /* GradientProfilePicture.swift */,
 				8B118D4E2616445A0034E443 /* GradientText.swift */,
@@ -141,6 +142,7 @@
 				8B80D37E260BCBAF008BA135 /* Helpers */,
 				8B80D37C260BCB9C008BA135 /* Views */,
 				8BADF49D2608F4DF00AD4928 /* Advanced_SwiftUIApp.swift */,
+				4CB50CE026F7E705009931CE /* ScanView.swift */,
 				8BFF04D6262C14B900300750 /* AppDelegate.swift */,
 				655F898326FCCBA100AE367B /* OnboardingView.swift */,
 				8BADF4B22608F55800AD4928 /* SignupView.swift */,
@@ -193,6 +195,7 @@
 			packageProductDependencies = (
 				8BDD89A22614106600EE9A20 /* FirebaseAuth */,
 				8BAEE2202618E92900DFCDA1 /* Purchases */,
+				65430B8027032C89001B6A17 /* JGProgressHUD-SwiftUI */,
 			);
 			productName = "Advanced SwiftUI";
 			productReference = 8BADF49A2608F4DF00AD4928 /* Advanced SwiftUI.app */;
@@ -224,6 +227,7 @@
 			packageReferences = (
 				8BDD89A12614106600EE9A20 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				8BAEE21F2618E92900DFCDA1 /* XCRemoteSwiftPackageReference "purchases-ios" */,
+				65430B7F27032C88001B6A17 /* XCRemoteSwiftPackageReference "JGProgressHUD-SwiftUI" */,
 			);
 			productRefGroup = 8BADF49B2608F4DF00AD4928 /* Products */;
 			projectDirPath = "";
@@ -466,6 +470,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		65430B7F27032C88001B6A17 /* XCRemoteSwiftPackageReference "JGProgressHUD-SwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/JonasGessner/JGProgressHUD-SwiftUI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.1;
+			};
+		};
 		8BAEE21F2618E92900DFCDA1 /* XCRemoteSwiftPackageReference "purchases-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/RevenueCat/purchases-ios.git";
@@ -485,6 +497,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		65430B8027032C89001B6A17 /* JGProgressHUD-SwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 65430B7F27032C88001B6A17 /* XCRemoteSwiftPackageReference "JGProgressHUD-SwiftUI" */;
+			productName = "JGProgressHUD-SwiftUI";
+		};
 		8BAEE2202618E92900DFCDA1 /* Purchases */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 8BAEE21F2618E92900DFCDA1 /* XCRemoteSwiftPackageReference "purchases-ios" */;
