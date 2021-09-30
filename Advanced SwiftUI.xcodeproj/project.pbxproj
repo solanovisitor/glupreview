@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4CA25D612705FDFC00998838 /* ScanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA25D602705FDFC00998838 /* ScanView.swift */; };
 		4CB50CDB26F7CD07009931CE /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CB50CDA26F7CD07009931CE /* ExternalAccessory.framework */; };
-		4CB50CE126F7E705009931CE /* ScanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB50CE026F7E705009931CE /* ScanView.swift */; };
 		65430B8127032C89001B6A17 /* JGProgressHUD-SwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 65430B8027032C89001B6A17 /* JGProgressHUD-SwiftUI */; };
 		655F898426FCCBA100AE367B /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655F898026FCCBA000AE367B /* PageViewController.swift */; };
 		655F898526FCCBA100AE367B /* PageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655F898126FCCBA100AE367B /* PageControl.swift */; };
@@ -41,8 +41,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4CA25D602705FDFC00998838 /* ScanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanView.swift; sourceTree = "<group>"; };
 		4CB50CDA26F7CD07009931CE /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
-		4CB50CE026F7E705009931CE /* ScanView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScanView.swift; path = "Advanced SwiftUI/ScanView.swift"; sourceTree = SOURCE_ROOT; };
 		655F898026FCCBA000AE367B /* PageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		655F898126FCCBA100AE367B /* PageControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageControl.swift; sourceTree = "<group>"; };
 		655F898226FCCBA100AE367B /* Subview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Subview.swift; sourceTree = "<group>"; };
@@ -142,7 +142,7 @@
 				8B80D37E260BCBAF008BA135 /* Helpers */,
 				8B80D37C260BCB9C008BA135 /* Views */,
 				8BADF49D2608F4DF00AD4928 /* Advanced_SwiftUIApp.swift */,
-				4CB50CE026F7E705009931CE /* ScanView.swift */,
+				4CA25D602705FDFC00998838 /* ScanView.swift */,
 				8BFF04D6262C14B900300750 /* AppDelegate.swift */,
 				655F898326FCCBA100AE367B /* OnboardingView.swift */,
 				8BADF4B22608F55800AD4928 /* SignupView.swift */,
@@ -261,7 +261,7 @@
 				8BC4D2C7262C0FF5007341D0 /* Persistence.swift in Sources */,
 				8BAEE2172618DE7900DFCDA1 /* GradientTextfield.swift in Sources */,
 				8B118D52261644860034E443 /* GradientButton.swift in Sources */,
-				4CB50CE126F7E705009931CE /* ScanView.swift in Sources */,
+				4CA25D612705FDFC00998838 /* ScanView.swift in Sources */,
 				8B80D384260BCCB8008BA135 /* ProfileView.swift in Sources */,
 				8BDAA44E261D2D7500F607FD /* SignInWithAppleButtonCoordinator.swift in Sources */,
 				8B80D387260BD622008BA135 /* SettingsView.swift in Sources */,
