@@ -6,10 +6,15 @@
 //
 
 import SwiftUI
+import SwiftUICharts
 
-struct ChartView: View {
+struct ChartView:View {
+    var demoData: [Double] = [132, 125, 120, 120, 118, 111, 104,  99,  94,  91,  89,  84]
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            LineView(data: demoData, title: "LineChart")
+        }
+
     }
 }
 
