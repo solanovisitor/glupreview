@@ -10,7 +10,7 @@ import SwiftUICharts
 
 struct ChartView:View {
     var demoData: [Double] = [132, 125, 120, 120, 118, 111, 104,  99,  94,  91,  89,  84]
-    let chartStyle = ChartStyle(backgroundColor: Color("secondaryBackground").opacity(0.1), accentColor: Color("secondaryBackground").opacity(1), secondGradientColor: Color.white, textColor: Color.white, legendTextColor: Color.black, dropShadowColor: Color.black)
+    let chartStyle = ChartStyle(backgroundColor: Color("secondaryBackground").opacity(0.1), accentColor: Color.white.opacity(0.5), secondGradientColor: Color.orange, textColor: Color.white, legendTextColor: Color.white, dropShadowColor: Color.gray)
 
 
     var body: some View {
@@ -20,7 +20,7 @@ struct ChartView:View {
                     ZStack {
                         RoundedRectangle(cornerRadius: 16)
                         .fill(Color(#colorLiteral(red: 0.10078595578670502, green: 0.06947916746139526, blue: 0.24166665971279144, alpha: 0.8999999761581421)))
-                        LineView(data: demoData, title: "Glucose (mg/dL", style: chartStyle)
+                        LineView(data: demoData, title: "Glucose (mg/dL)", style: chartStyle)
                         .padding(30)
                     }
                     

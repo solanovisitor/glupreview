@@ -12,7 +12,7 @@ struct ScanView: View {
 
     var body: some View {
         ZStack {
-            Image("background-1")
+            Image("background-3")
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .edgesIgnoringSafeArea(.all)
@@ -21,8 +21,8 @@ struct ScanView: View {
                 .opacity(0.5)
             VStack {
                 VStack(alignment: .center, spacing: 80) {
-                    ChartView()
-                    ScanButton(buttonTitle: "Scan!")
+                ChartView()
+                ScanButton(buttonTitle: "Scan!")
             }
                 .padding(20)
         }
