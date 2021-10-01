@@ -22,10 +22,16 @@ struct Advanced_SwiftUIApp: App {
     
     var body: some Scene {
         WindowGroup {
-            //OnboardingView()
-            SignupView().environment(\.managedObjectContext, appDelegate.coreDataContext)
+<<<<<<< HEAD
+            //SignupView()
+            OnboardingView().environment(\.managedObjectContext, appDelegate.coreDataContext)
         }
         
         
+=======
+            Onboarding()
+                .environment(\.managedObjectContext, appDelegate.coreDataContext)
+        }
+>>>>>>> 79002f2eb20010c5ed2ece2c33a36afe476e96da
     }
 }

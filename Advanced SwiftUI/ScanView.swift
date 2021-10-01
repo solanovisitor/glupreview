@@ -7,7 +7,6 @@
 
 import SwiftUI
 import CoreNFC
-import UIKit
 
 struct ScanView: View {
     @State var data = ""
@@ -27,12 +26,11 @@ struct ScanView_Previews: PreviewProvider {
 
 struct nfcButton: UIViewRepresentable {
     @Binding var data: String
-    func makeUIView(context: UIViewRepresentableContext<nfcButton>) -> UIButton {
+    func makeUIView(context: Context) -> UIButton {
         let button = UIButton()
         button.setTitle("Ready to scan!", for: .normal)
         button.backgroundColor = UIColor.purple
-        button.addTarget(context.coordinator, action: #selector(context.coordinator.scan(_:)), for: .touchUpInside)
-
+        button.addTarget(context, action: #selector(context.coordinator.scan(_:)), for: .touchUpOutside)
         return button
     }
     
@@ -47,7 +45,6 @@ struct nfcButton: UIViewRepresentable {
     class Coordinator: NSObject, NFCTagReaderSessionDelegate {
         var session: NFCTagReaderSession?
         @Binding var data: String
-        @Published var scannedData: Data?
         
         init(data: Binding<String>) {
             _data = data
@@ -55,10 +52,9 @@ struct nfcButton: UIViewRepresentable {
         
         @objc func scan(_ sender: Any) {
             // Look for ISO 14443 and ISO 15693 tags
-            let session = NFCTagReaderSession(pollingOption: .iso15693, delegate: self, queue: .main)
+            let session = NFCTagReaderSession(pollingOption: .iso15693, delegate: self)
             session?.begin()
         }
-        
         
         func tagReaderSessionDidBecomeActive(_ session: NFCTagReaderSession) {
             // Do nothing
@@ -71,18 +67,18 @@ struct nfcButton: UIViewRepresentable {
         func tagReaderSession(_ session: NFCTagReaderSession, didDetect tags: [NFCTag]) {
             
             if tags.count > 1 {
-                print("More than 1 sensor was found. Please present only 1 sensor.")
-                session.invalidate(errorMessage: "More than 1 sensor was found. Please present only 1 sensor.")
+                print("More than 1 tag was found. Please present only 1 tag.")
+                session.invalidate(errorMessage: "More than 1 tag was found. Please present only 1 tag.")
                 return
             }
 
             guard let firstTag = tags.first else {
-                print("Unable to get sensor")
-                session.invalidate(errorMessage: "Unable to get first sensor")
+                print("Unable to get first tag")
+                session.invalidate(errorMessage: "Unable to get first tag")
                 return
             }
 
-            print("Sensor found!", firstTag)
+            print("Got a Tag!", firstTag)
             
             session.connect(to: tags.first!) { (error: Error?) in
                 if error != nil {
@@ -90,28 +86,19 @@ struct nfcButton: UIViewRepresentable {
                     return
                 }
 
-                print("Connected to sensor!")
+                print("Connected to tag!")
                 
                 switch firstTag {
                 case .iso15693(let tag):
                     // Read one block of data
                     tag.readSingleBlock(requestFlags: .highDataRate, blockNumber: 1, resultHandler: { result in
-                        switch result {
-                        case .success(let str):
-                            self.data = String(decoding: str, as: UTF8.self)
-                        case .failure(let error):
-                            print(error)
-                        }
-                        })
-                case .feliCa(_): session.invalidate(errorMessage: "Unsupported tag!")
-                case .iso7816(_): session.invalidate(errorMessage: "Unsupported tag!")
-                case .miFare(_): session.invalidate(errorMessage: "Unsupported tag!")
-                @unknown default: session.invalidate(errorMessage: "Unsupported tag!")
-                }
+                        print(result)
+                    })
+                default:
+                    session.invalidate(errorMessage: "Unsupported NFC tag.")
                 }
             }
         }
     }
 }
-
-
+}

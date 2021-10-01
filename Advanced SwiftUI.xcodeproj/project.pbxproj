@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+<<<<<<< HEAD
 		4CA25D612705FDFC00998838 /* ScanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA25D602705FDFC00998838 /* ScanView.swift */; };
 		4CB50CDB26F7CD07009931CE /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CB50CDA26F7CD07009931CE /* ExternalAccessory.framework */; };
 		65430B8127032C89001B6A17 /* JGProgressHUD-SwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 65430B8027032C89001B6A17 /* JGProgressHUD-SwiftUI */; };
@@ -15,6 +16,13 @@
 		655F898626FCCBA100AE367B /* Subview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655F898226FCCBA100AE367B /* Subview.swift */; };
 		655F898726FCCBA100AE367B /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655F898326FCCBA100AE367B /* OnboardingView.swift */; };
 		65A657BE26FB453B00DAC0BB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 65A657BD26FB453A00DAC0BB /* GoogleService-Info.plist */; };
+=======
+		3F520F5F27062D8D00A04AA9 /* Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F520F5E27062D8D00A04AA9 /* Onboarding.swift */; };
+		3F520F6127062DF200A04AA9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F520F6027062DF200A04AA9 /* ContentView.swift */; };
+		3FA127CF2703BEF2000B1AEA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3FA127CE2703BEF2000B1AEA /* GoogleService-Info.plist */; };
+		4CB50CDB26F7CD07009931CE /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CB50CDA26F7CD07009931CE /* ExternalAccessory.framework */; };
+		4CB50CE126F7E705009931CE /* ScanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB50CE026F7E705009931CE /* ScanView.swift */; };
+>>>>>>> 79002f2eb20010c5ed2ece2c33a36afe476e96da
 		8B118D4F2616445A0034E443 /* GradientText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B118D4E2616445A0034E443 /* GradientText.swift */; };
 		8B118D52261644860034E443 /* GradientButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B118D51261644860034E443 /* GradientButton.swift */; };
 		8B3F54D8261FB5C800C3CB9E /* GradientProfilePicture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3F54D7261FB5C800C3CB9E /* GradientProfilePicture.swift */; };
@@ -41,6 +49,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+<<<<<<< HEAD
 		4CA25D602705FDFC00998838 /* ScanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanView.swift; sourceTree = "<group>"; };
 		4CB50CDA26F7CD07009931CE /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
 		655F898026FCCBA000AE367B /* PageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
@@ -48,6 +57,13 @@
 		655F898226FCCBA100AE367B /* Subview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Subview.swift; sourceTree = "<group>"; };
 		655F898326FCCBA100AE367B /* OnboardingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		65A657BD26FB453A00DAC0BB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+=======
+		3F520F5E27062D8D00A04AA9 /* Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding.swift; sourceTree = "<group>"; };
+		3F520F6027062DF200A04AA9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		3FA127CE2703BEF2000B1AEA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		4CB50CDA26F7CD07009931CE /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
+		4CB50CE026F7E705009931CE /* ScanView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScanView.swift; path = "Advanced SwiftUI/Helpers/ScanView.swift"; sourceTree = SOURCE_ROOT; };
+>>>>>>> 79002f2eb20010c5ed2ece2c33a36afe476e96da
 		8B118D4E2616445A0034E443 /* GradientText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientText.swift; sourceTree = "<group>"; };
 		8B118D51261644860034E443 /* GradientButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientButton.swift; sourceTree = "<group>"; };
 		8B3F54D7261FB5C800C3CB9E /* GradientProfilePicture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientProfilePicture.swift; sourceTree = "<group>"; };
@@ -91,12 +107,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3F520F5D27062CFE00A04AA9 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				3F520F5E27062D8D00A04AA9 /* Onboarding.swift */,
+				3F520F6027062DF200A04AA9 /* ContentView.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
 		8B80D37C260BCB9C008BA135 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+<<<<<<< HEAD
 				655F898126FCCBA100AE367B /* PageControl.swift */,
 				655F898026FCCBA000AE367B /* PageViewController.swift */,
 				655F898226FCCBA100AE367B /* Subview.swift */,
+=======
+				3F520F5D27062CFE00A04AA9 /* Onboarding */,
+				4CB50CE026F7E705009931CE /* ScanView.swift */,
+>>>>>>> 79002f2eb20010c5ed2ece2c33a36afe476e96da
 				8B80D380260BCBFB008BA135 /* TextfieldIcon.swift */,
 				8B3F54D7261FB5C800C3CB9E /* GradientProfilePicture.swift */,
 				8B118D4E2616445A0034E443 /* GradientText.swift */,
@@ -144,14 +174,13 @@
 				8BADF49D2608F4DF00AD4928 /* Advanced_SwiftUIApp.swift */,
 				4CA25D602705FDFC00998838 /* ScanView.swift */,
 				8BFF04D6262C14B900300750 /* AppDelegate.swift */,
-				655F898326FCCBA100AE367B /* OnboardingView.swift */,
 				8BADF4B22608F55800AD4928 /* SignupView.swift */,
 				8B80D383260BCCB8008BA135 /* ProfileView.swift */,
 				8B80D386260BD622008BA135 /* SettingsView.swift */,
 				8BC4D2C6262C0FF5007341D0 /* Persistence.swift */,
-				65A657BD26FB453A00DAC0BB /* GoogleService-Info.plist */,
 				8BADF4A12608F4E000AD4928 /* Assets.xcassets */,
 				8BADF4AB2608F4E000AD4928 /* Info.plist */,
+				3FA127CE2703BEF2000B1AEA /* GoogleService-Info.plist */,
 				8BC4D2D3262C1289007341D0 /* Advanced_SwiftUI.xcdatamodeld */,
 				8BADF4A32608F4E000AD4928 /* Preview Content */,
 			);
@@ -244,8 +273,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				8BADF4A52608F4E000AD4928 /* Preview Assets.xcassets in Resources */,
+				3FA127CF2703BEF2000B1AEA /* GoogleService-Info.plist in Resources */,
 				8BADF4A22608F4E000AD4928 /* Assets.xcassets in Resources */,
-				65A657BE26FB453B00DAC0BB /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,23 +290,25 @@
 				8BC4D2C7262C0FF5007341D0 /* Persistence.swift in Sources */,
 				8BAEE2172618DE7900DFCDA1 /* GradientTextfield.swift in Sources */,
 				8B118D52261644860034E443 /* GradientButton.swift in Sources */,
+<<<<<<< HEAD
 				4CA25D612705FDFC00998838 /* ScanView.swift in Sources */,
+=======
+				3F520F5F27062D8D00A04AA9 /* Onboarding.swift in Sources */,
+				4CB50CE126F7E705009931CE /* ScanView.swift in Sources */,
+>>>>>>> 79002f2eb20010c5ed2ece2c33a36afe476e96da
 				8B80D384260BCCB8008BA135 /* ProfileView.swift in Sources */,
 				8BDAA44E261D2D7500F607FD /* SignInWithAppleButtonCoordinator.swift in Sources */,
 				8B80D387260BD622008BA135 /* SettingsView.swift in Sources */,
 				8B84EF3F260A7AC700D00057 /* VisualEffectBlur.swift in Sources */,
-				655F898526FCCBA100AE367B /* PageControl.swift in Sources */,
 				8B3F54D8261FB5C800C3CB9E /* GradientProfilePicture.swift in Sources */,
 				8BC4D2D5262C1289007341D0 /* Advanced_SwiftUI.xcdatamodeld in Sources */,
 				8BDAA447261D2A9600F607FD /* SignInWithAppleButton.swift in Sources */,
 				8BAEE21D2618E45C00DFCDA1 /* GradientIcon.swift in Sources */,
-				655F898426FCCBA100AE367B /* PageViewController.swift in Sources */,
 				8BADF4B32608F55800AD4928 /* SignupView.swift in Sources */,
 				8B118D4F2616445A0034E443 /* GradientText.swift in Sources */,
-				655F898626FCCBA100AE367B /* Subview.swift in Sources */,
 				8BFF04D7262C14B900300750 /* AppDelegate.swift in Sources */,
+				3F520F6127062DF200A04AA9 /* ContentView.swift in Sources */,
 				8BADF49E2608F4DF00AD4928 /* Advanced_SwiftUIApp.swift in Sources */,
-				655F898726FCCBA100AE367B /* OnboardingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -406,10 +437,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Advanced SwiftUI/Advanced SwiftUI.entitlements";
-				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Advanced SwiftUI/Preview Content\"";
-				DEVELOPMENT_TEAM = P28NZ5C39R;
+				DEVELOPMENT_TEAM = SZXUSYAPBT;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Advanced SwiftUI/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -417,9 +447,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = aihealth.Glupreview;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vt.aihealth.Glupreview;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -431,10 +460,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Advanced SwiftUI/Advanced SwiftUI.entitlements";
-				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Advanced SwiftUI/Preview Content\"";
-				DEVELOPMENT_TEAM = P28NZ5C39R;
+				DEVELOPMENT_TEAM = SZXUSYAPBT;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Advanced SwiftUI/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -442,9 +470,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = aihealth.Glupreview;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vt.aihealth.Glupreview;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

@@ -11,6 +11,7 @@
 	<key>com.apple.developer.icloud-container-identifiers</key>
 	<array/>
 	<key>com.apple.developer.icloud-services</key>
+<<<<<<< HEAD
 	<array>
 		<string>CloudKit</string>
 	</array>
@@ -19,5 +20,8 @@
 		<string>NDEF</string>
 		<string>TAG</string>
 	</array>
+=======
+	<array/>
+>>>>>>> 79002f2eb20010c5ed2ece2c33a36afe476e96da
 </dict>
 </plist>
