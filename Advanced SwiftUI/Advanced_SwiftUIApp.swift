@@ -22,8 +22,8 @@ struct Advanced_SwiftUIApp: App {
     
     var body: some Scene {
         WindowGroup {
-            //SignupView()
-            OnboardingView().environment(\.managedObjectContext, appDelegate.coreDataContext)
+            //OnboardingView()
+            SignupView().environment(\.managedObjectContext, appDelegate.coreDataContext)
         }
         
         
