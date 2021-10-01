@@ -11,11 +11,75 @@ import UIKit
 
 struct ScanView: View {
     @State var data = ""
-    
+    @State var buttonTitle = "Scan!"
+    var gradient1: [Color] = [
+        Color.init(red: 101/255, green: 134/255, blue: 1),
+        Color.init(red: 1, green: 64/255, blue: 80/255),
+        Color.init(red: 109/255, green: 1, blue: 185/255),
+        Color.init(red: 39/255, green: 232/255, blue: 1),
+    ]
+
+    @State private var angle: Double = 0
+
     var body: some View {
-        VStack {
-            Text(data)
-            nfcButton(data: self.$data)
+        ZStack {
+            Image("background-1")
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .edgesIgnoringSafeArea(.all)
+            Color("secondaryBackground")
+                .edgesIgnoringSafeArea(.all)
+                .opacity(0.5)
+            VStack {
+                VStack(alignment: .center, spacing: 16) {
+                    //Button
+                    GeometryReader { geometry in
+                    ZStack {
+                        AngularGradient(gradient: Gradient(colors: gradient1), center: .center, angle: .degrees(angle))
+                            .blendMode(.overlay)
+                            .blur(radius: 8.0)
+                            .mask(
+                                RoundedRectangle(cornerRadius: 16)
+                                    .frame(maxWidth: geometry.size.width - 15)
+                                    .frame(height: 50)
+                                    .blur(radius: 8)
+                            )
+                            .onAppear {
+                                withAnimation(.linear(duration: 7)) {
+                                    self.angle += 350
+                                }
+                            }
+                        RoundedRectangle(cornerRadius: 16)
+                        .fill(Color(#colorLiteral(red: 0.10078595578670502, green: 0.06947916746139526, blue: 0.24166665971279144, alpha: 0.8999999761581421)))
+
+                        RoundedRectangle(cornerRadius: 16)
+                        .strokeBorder(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)), lineWidth: 1)
+                        .blendMode(.softLight)
+                        
+                        //Start
+                        GradientText(text: buttonTitle)
+                            .font(.headline)
+                            .frame(maxWidth: geometry.size.width)
+                            .frame(height: 50)
+                            .background(
+                                Color("tertiaryBackground")
+                                    .opacity(0.9)
+                            )
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 16.0)
+                                    .stroke(Color.white, lineWidth: 1.0)
+                                    .blendMode(.normal)
+                                    .opacity(0.7)
+                            )
+                            .cornerRadius(16.0)
+                        nfcButton(data: self.$data)
+                    }
+                    
+                    
+                    }
+                    .frame(width: 319, height: 50)
+            }
+        }
     }
 }
 
@@ -27,10 +91,9 @@ struct ScanView_Previews: PreviewProvider {
 
 struct nfcButton: UIViewRepresentable {
     @Binding var data: String
+
     func makeUIView(context: UIViewRepresentableContext<nfcButton>) -> UIButton {
         let button = UIButton()
-        button.setTitle("Ready to scan!", for: .normal)
-        button.backgroundColor = UIColor.purple
         button.addTarget(context.coordinator, action: #selector(context.coordinator.scan(_:)), for: .touchUpInside)
 
         return button
