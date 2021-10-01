@@ -20,10 +20,8 @@ struct ScanView: View {
                 .edgesIgnoringSafeArea(.all)
                 .opacity(0.5)
             VStack {
-                VStack(alignment: .leading, spacing: 48) {
-                    Text("Here goes the chart view!")
-                        .font(Font.largeTitle.bold())
-                        .foregroundColor(.white)
+                VStack(alignment: .center, spacing: 80) {
+                    ChartView()
                     ScanButton(buttonTitle: "Scan!")
             }
                 .padding(20)
