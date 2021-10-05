@@ -2,7 +2,7 @@
 //  onboarding.swift
 //  Advanced SwiftUI
 //
-//  Created by Sulaman Khan on 30/09/2021.
+//  Created by Hassan Bhatti on 30/09/2021.
 //
 
 import SwiftUI

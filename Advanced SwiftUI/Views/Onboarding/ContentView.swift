@@ -2,7 +2,7 @@
 //  onboarding_subview.swift
 //  Advanced SwiftUI
 //
-//  Created by Sulaman Khan on 30/09/2021.
+//  Created by Hassan Bhatti on 30/09/2021.
 //
 
 import SwiftUI
@@ -12,6 +12,10 @@ struct OnboardContentView: View {
     var primaryText : String!
     var secondryText : String?
     var isStartVisible : Bool = false
+    
+    @State var isMoveToView = false
+    @Environment(\.managedObjectContext) private var viewContext
+    
     var body: some View {
         VStack {
             VStack {
@@ -52,11 +56,14 @@ struct OnboardContentView: View {
             .padding([.leading, .trailing])
             isStartVisible
                 ? GradientButton(buttonTitle: "Start", buttonAction: {
-                    //                        signup()
+                    isMoveToView = true
                 }).padding([.leading,.trailing],8)
                 : nil
         }
-        
+        .fullScreenCover(isPresented: $isMoveToView) {
+            SignupView()
+                .environment(\.managedObjectContext, self.viewContext)
+        }
     }
 }
 

@@ -211,7 +211,8 @@ struct SignupView: View {
             )
             .cornerRadius(30)
             .padding(.horizontal)
-            .onAppear() {                
+            .onAppear() {
+                UserDefaults.standard.setValue(true, forKey: isOnboarded_STR)
                 Auth.auth().addStateDidChangeListener { (auth, user) in
                     if let currentUser = user {
                         if savedAccounts.count == 0 {
@@ -245,7 +246,7 @@ struct SignupView: View {
             
         }
         .fullScreenCover(isPresented: $showProfileView) {
-            ScanView()
+            Dashboard()
                 .environment(\.managedObjectContext, self.viewContext)
         }
     }
