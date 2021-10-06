@@ -13,7 +13,6 @@ struct Dashboard: View {
     private var rateValue: Int?
     
     @State private var scanningStatus : ScanStatus = ScanStatus.ready
-   
     var body: some View {
         NavigationView{
             ZStack {
@@ -33,7 +32,7 @@ struct Dashboard: View {
                             ChartView()
                         }
                     }
-                    .padding(.top,100)
+                    .padding(.top,50)
                     .padding(.bottom,35)
                     if (scanningStatus != ScanStatus.rescan) {
                         VStack(alignment: .center, spacing: 40) {
@@ -68,7 +67,7 @@ struct Dashboard: View {
                             
                         )
                         .cornerRadius(20)
-                        .padding([.leading, .trailing],9)
+                        .padding([.leading, .trailing],7)
                     } else {
                         Group {
                             GradientButton(buttonTitle: scanningStatus.rawValue, buttonAction: {
@@ -92,6 +91,7 @@ struct Dashboard: View {
                 }
             })
         }
+        .accentColor( .white)
     }
 }
 

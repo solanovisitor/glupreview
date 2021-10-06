@@ -15,17 +15,15 @@ struct Advanced_SwiftUIApp: App {
     
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     
-    
-    @State private var isOnboarded: Bool = false
+    @AppStorage(isOnboarded_STR) var onBoarded: Bool = false
     init() {
         FirebaseApp.configure()
         Purchases.configure(withAPIKey: "YrBMLTUqlQKKcnYAtAYqssNGbNPFHxMI")
-        isOnboarded = UserDefaults.standard.bool(forKey: isOnboarded_STR)
     }
     
     var body: some Scene {
         WindowGroup {
-            if (isOnboarded){
+            if (onBoarded){
                 SignupView().environment(\.managedObjectContext, appDelegate.coreDataContext)
             } else {
                 Onboarding().environment(\.managedObjectContext, appDelegate.coreDataContext)

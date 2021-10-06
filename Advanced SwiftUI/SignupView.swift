@@ -39,6 +39,8 @@ struct SignupView: View {
     
     private let generator = UISelectionFeedbackGenerator()
     
+    @State var listener: AuthStateDidChangeListenerHandle?
+    
     var body: some View {
         ZStack {
             Image(signupToggle ? "background-3" : "background-1")
@@ -213,7 +215,7 @@ struct SignupView: View {
             .padding(.horizontal)
             .onAppear() {
                 UserDefaults.standard.setValue(true, forKey: isOnboarded_STR)
-                Auth.auth().addStateDidChangeListener { (auth, user) in
+                self.listener = Auth.auth().addStateDidChangeListener { (auth, user) in
                     if let currentUser = user {
                         if savedAccounts.count == 0 {
                             let userDataToSave = Account(context: viewContext)
@@ -237,6 +239,7 @@ struct SignupView: View {
                                 showAlertToggle.toggle()
                             }
                         } else {
+                            Auth.auth().removeStateDidChangeListener(self.listener!)
                             showProfileView.toggle()
                         }
                     }
