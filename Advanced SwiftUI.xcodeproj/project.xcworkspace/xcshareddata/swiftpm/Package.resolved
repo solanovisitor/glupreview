@@ -20,15 +20,6 @@
         }
       },
       {
-        "package": "SwiftUICharts",
-        "repositoryURL": "https://github.com/apppear/chartview.git",
-        "state": {
-          "branch": null,
-          "revision": "9115a992c91fa19cbb4f2241084240d38654a1fc",
-          "version": "1.5.5"
-        }
-      },
-      {
         "package": "Firebase",
         "repositoryURL": "https://github.com/firebase/firebase-ios-sdk.git",
         "state": {
@@ -143,6 +134,15 @@
           "branch": null,
           "revision": "1f62db409f2c9b0223a3f68567b4a01333aae778",
           "version": "1.17.0"
+        }
+      },
+      {
+        "package": "SwiftUICharts",
+        "repositoryURL": "https://github.com/willdale/SwiftUICharts.git",
+        "state": {
+          "branch": null,
+          "revision": "0ba0862890dddc06bd7282f49d2e6679e7bacc24",
+          "version": "2.9.3"
         }
       }
     ]

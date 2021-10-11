@@ -23,22 +23,25 @@ struct Onboarding: View {
                                 OnboardContentView(
                                     imageStr: "onboarding-1-diamond",
                                     primaryText: "Hi👋\nWelcome to Gluprview!",
-                                    secondryText: nil)
+                                    secondryText: nil,
+                                    onboardView: OnboardViewEnum.first)
                                     .tag(0)
                                 OnboardContentView(
                                     imageStr: "onboarding-2-magnify",
                                     primaryText: "How does it work?",
-                                    secondryText: "We use personalized machine learning for helping you control your blood glucose levels")
+                                    secondryText: "We use personalized machine learning for helping you control your blood glucose levels",
+                                    onboardView: OnboardViewEnum.second)
                                     .tag(1)
                                 OnboardContentView(
                                     imageStr: "onboarding-3-arrow",
                                     primaryText: "How to get started?",
-                                    secondryText: "You will train your own model by feeding it with your historical glucose measurements")
+                                    secondryText: "You will train your own model by feeding it with your historical glucose measurements",
+                                    onboardView: OnboardViewEnum.second)
                                     .tag(2)
                                 OnboardContentView(
                                     imageStr: "onboarding-4-sun",
                                     primaryText: "Train your model!",
-                                    secondryText: "Click on the button below and follow the instructions on our website to get your model trained and ready to act",isStartVisible: true)
+                                    secondryText: "Click on the button below and follow the instructions on our website to get your model trained and ready to act",isStartVisible: true,onboardView: OnboardViewEnum.fourth)
                                     .tag(3)
                             })
                 .tabViewStyle(PageTabViewStyle())

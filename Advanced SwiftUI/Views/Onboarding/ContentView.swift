@@ -6,12 +6,18 @@
 //
 
 import SwiftUI
-
+enum OnboardViewEnum {
+    case first
+    case second
+    case third
+    case fourth
+}
 struct OnboardContentView: View {
     var imageStr : String!
     var primaryText : String!
     var secondryText : String?
     var isStartVisible : Bool = false
+    var onboardView : OnboardViewEnum = OnboardViewEnum.fourth
     
     @State var isMoveToView = false
     @Environment(\.managedObjectContext) private var viewContext
@@ -33,13 +39,40 @@ struct OnboardContentView: View {
                             .foregroundColor(.white)
                             .padding([.leading, .trailing])
                             .padding(.bottom, secondryText != nil ? 10 : 50)
-                        secondryText != nil
-                            ? Text(secondryText!)
-                            .font(.headline)
-                            .foregroundColor(.white.opacity(0.7))
-                            .padding([.leading, .trailing])
-                            .padding(.bottom,50)
-                            : nil
+                        if secondryText != nil {
+                            if onboardView == .second {
+                                VStack {
+                                    Text("We use ")
+                                        + Text("personalized ").font(.headline.bold()).foregroundColor(.white)
+                                        + Text("machine learning for helping you control your\n")
+                                        + Text("blood glucose levels").font(.headline.bold()).foregroundColor(.white)
+                                }
+                                .foregroundColor(.white.opacity(0.7))
+                                .padding([.leading, .trailing])
+                                .padding(.bottom,20)
+                            } else if onboardView == .third {
+                                VStack {
+                                    Text("You will train your own model by ")
+                                        + Text("feeding it with your historical glucose measurements")
+                                            .font(.headline.bold()).foregroundColor(.white)
+                                }
+                                .foregroundColor(.white.opacity(0.7))
+                                .padding([.leading, .trailing])
+                                .padding(.bottom,20)
+                            } else if onboardView == .fourth {
+                                VStack {
+                                    Text("Click on the button below and ")
+                                        + Text("follow the instructions ")
+                                        .font(.headline.bold()).foregroundColor(Colors.GradientUpperOrange)
+                                        + Text("on our ")
+                                        + Text("website ").font(.headline.bold()).foregroundColor(.white)
+                                        + Text("to get your model trained and ready to act")
+                                }
+                                .foregroundColor(.white.opacity(0.7))
+                                .padding([.leading, .trailing])
+                                .padding(.bottom,20)
+                            }
+                        }
                     }
                 }
                 .padding(.horizontal)
@@ -72,6 +105,8 @@ struct ContentView_Previews: PreviewProvider {
         OnboardContentView(
             imageStr: "onboarding-1-diamond",
             primaryText: "Hi👋\nWelcome to Gluprview!",
-            secondryText: "We use personalized machine learning for helping you control your blood glucose levels")
+            secondryText: nil,
+            onboardView: OnboardViewEnum.first,
+        )
     }
 }

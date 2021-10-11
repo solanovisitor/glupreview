@@ -10,8 +10,8 @@ class ViewRouter: ObservableObject {
     
     @Published var currentPage: String
     init() {
-        if !UserDefaults.standard.bool(forKey: isOnboarded_STR) {
-            UserDefaults.standard.set(true, forKey: isOnboarded_STR)
+        if !UserDefaults.standard.bool(forKey: IsOnboarded_STR) {
+            UserDefaults.standard.set(true, forKey: IsOnboarded_STR)
             currentPage = "onboarding"
         } else {
             currentPage = "dashboard"
