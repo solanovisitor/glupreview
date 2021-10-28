@@ -11,6 +11,7 @@ import FirebaseAuth
 import CryptoKit
 import CoreData
 import AuthenticationServices
+import FirebaseDatabase
 
 struct SignupView: View {
     @State private var email: String = ""
@@ -19,7 +20,7 @@ struct SignupView: View {
     @State private var editingPasswordTextfield = false
     @State private var emailIconBounce: Bool = false
     @State private var passwordIconBounce: Bool = false
-    @State private var showProfileView: Bool = false
+    @State private var toggleView: Bool = false
     @State private var signupToggle = true
     
     @State private var showAlertToggle = false
@@ -38,6 +39,8 @@ struct SignupView: View {
     ) private var savedAccounts: FetchedResults<Account>
     
     private let generator = UISelectionFeedbackGenerator()
+    
+    @State var ref: DatabaseReference = Database.database().reference()
     
     var body: some View {
         ZStack {
@@ -79,6 +82,7 @@ struct SignupView: View {
                         .foregroundColor(Color.white.opacity(0.7))
                         .autocapitalization(.none)
                         .textContentType(.emailAddress)
+                        .keyboardType(.emailAddress)
                     }
                     .frame(height: 52)
                     .overlay(
@@ -211,42 +215,18 @@ struct SignupView: View {
             )
             .cornerRadius(30)
             .padding(.horizontal)
-            .onAppear() {                
-                Auth.auth().addStateDidChangeListener { (auth, user) in
-                    if let currentUser = user {
-                        if savedAccounts.count == 0 {
-                            let userDataToSave = Account(context: viewContext)
-                            userDataToSave.name = currentUser.displayName
-                            userDataToSave.userID = currentUser.uid
-                            userDataToSave.bio = nil
-                            userDataToSave.numberOfCertificates = 0
-                            userDataToSave.userSince = Date()
-                            userDataToSave.proMember = false
-                            userDataToSave.twitterHandle = nil
-                            userDataToSave.website = nil
-                            userDataToSave.profileImage = nil
-                            do {
-                                try viewContext.save()
-                                DispatchQueue.main.async {
-                                    showProfileView.toggle()
-                                }
-                            } catch let error {
-                                alertTitle = "Could not save user data"
-                                alertMessage = error.localizedDescription
-                                showAlertToggle.toggle()
-                            }
-                        } else {
-                            showProfileView.toggle()
-                        }
-                    }
-                }
+            .onAppear() {
+                UserDefaults.standard.setValue(true, forKey: IsOnboarded_STR)
             }
             .rotation3DEffect(Angle(degrees: rotationAngle), axis: (x: CGFloat(0), y: CGFloat(1), z: CGFloat(0)))
             
         }
-        .fullScreenCover(isPresented: $showProfileView) {
-            ScanView()
-                .environment(\.managedObjectContext, self.viewContext)
+        .fullScreenCover(isPresented: $toggleView) {
+            if (RCValues.sharedInstance.value(forKey: .modelVersion) == "1.0") {
+                ModelDownloadView().environment(\.managedObjectContext, self.viewContext)
+            } else {
+                Dashboard().environment(\.managedObjectContext, self.viewContext)
+            }
         }
     }
     
@@ -273,6 +253,9 @@ struct SignupView: View {
                     showAlertToggle.toggle()
                     return
                 }
+                if let currentUser = result?.user {
+                    saveSessionForUser(isSignUp: true, user: currentUser)
+                }
             }
         } else {
             Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
@@ -281,8 +264,107 @@ struct SignupView: View {
                     alertMessage = error!.localizedDescription
                     showAlertToggle.toggle()
                 }
+                if let currentUser = result?.user {
+                    saveSessionForUser(isSignUp: false, user: currentUser)
+                }
             }
         }
+    }
+    
+    func saveSessionForUser(isSignUp: Bool, user: User){
+        if isSignUp {
+            let userDic : [String:String] = [
+                "name" : user.displayName ?? "",
+                "uid" : user.uid,
+                "bio" : "",
+                "userSince" : Date().description,
+                "numberOfCertificates" : "0",
+                "proMember" : "0",
+                "twitterHandle" : "0",
+                "website" : "",
+                "profileImage" : "",
+            ]
+            saveCurrentUserContext(user) {
+                UserDefaults.standard.setValue(true, forKey: IsLoggedIn_STR)
+                self.ref.child(FIR_User_STR).child(user.uid).setValue(userDic)
+                toggleView.toggle()
+            }
+        } else {
+            ref.child("users/\(user.uid)").getData(completion:  { error, snapshot in
+                guard error == nil else {
+                    alertTitle = "Could not save user data"
+                    alertMessage = error!.localizedDescription
+                    showAlertToggle.toggle()
+                    return;
+                }
+                saveCurrentUserContext(user) {
+                    UserDefaults.standard.setValue(true, forKey: IsLoggedIn_STR)
+                    toggleView.toggle()
+                }
+            });
+        }
+    }
+    func saveCurrentUserContext(_ user : User, completionHandler: @escaping () -> Void){
+        if savedAccounts.count == 0 {
+            let userDataToSave = Account(context: viewContext)
+            userDataToSave.name = user.displayName
+            userDataToSave.userID = user.uid
+            userDataToSave.bio = nil
+            userDataToSave.numberOfCertificates = 0
+            userDataToSave.userSince = Date()
+            userDataToSave.proMember = false
+            userDataToSave.twitterHandle = nil
+            userDataToSave.website = nil
+            userDataToSave.profileImage = nil
+            do {
+                try viewContext.save()
+                DispatchQueue.main.async {
+                    completionHandler()
+                }
+            } catch let error {
+                alertTitle = "Could not save user data"
+                alertMessage = error.localizedDescription
+                showAlertToggle.toggle()
+            }
+        } else {
+            completionHandler()
+        }
+        //        do {
+        ////            let userDataToSave = UserModel(dic)
+        ////            let encodedData: Data = try NSKeyedArchiver.archivedData(withRootObject: userDataToSave, requiringSecureCoding: true)
+        ////            UserDefaults.standard.set(encodedData, forKey: CurrentUser_STR)
+        ////            UserDefaults.standard.synchronize()
+        //
+        //        } catch let error {
+        //            alertTitle = "Could not save user data"
+        //            alertMessage = error.localizedDescription
+        //            showAlertToggle.toggle()
+        //        }
+        
+        //        if savedAccounts.count == 0 {
+        //            let userDataToSave = Account(context: viewContext)
+        //            userDataToSave.name = currentUser.displayName
+        //            userDataToSave.userID = currentUser.uid
+        //            userDataToSave.bio = nil
+        //            userDataToSave.numberOfCertificates = 0
+        //            userDataToSave.userSince = Date()
+        //            userDataToSave.proMember = false
+        //            userDataToSave.twitterHandle = nil
+        //            userDataToSave.website = nil
+        //            userDataToSave.profileImage = nil
+        //            do {
+        //                try viewContext.save()
+        //                DispatchQueue.main.async {
+        //                    showProfileView.toggle()
+        //                }
+        //            } catch let error {
+        //                alertTitle = "Could not save user data"
+        //                alertMessage = error.localizedDescription
+        //                showAlertToggle.toggle()
+        //            }
+        //        } else {
+        //            showProfileView.toggle()
+        //        }
     }
 }
 
