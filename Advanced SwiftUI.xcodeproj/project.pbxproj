@@ -215,7 +215,10 @@
 		8B80D37C260BCB9C008BA135 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+<<<<<<< HEAD
 				CAF552B0272981B20090032E /* NFC Reader */,
+=======
+>>>>>>> dc4317f72206739db5b279edc80e979ef907bd2a
 				3F15440E2712413500649B6A /* ML Download */,
 				3FC80E482709F26600CBE347 /* Dashboard */,
 				0E8687C92708B22100A760B8 /* Settings */,
@@ -416,7 +419,10 @@
 				3FB4A46D270B89BE00BC6D96 /* Path+QuadCurve.swift in Sources */,
 				8B80D381260BCBFB008BA135 /* TextfieldIcon.swift in Sources */,
 				3FB4A469270B89BE00BC6D96 /* MagnifierRect.swift in Sources */,
+<<<<<<< HEAD
 				CA4B0FDB27285A860085E266 /* SugarCalculation2.mlmodel in Sources */,
+=======
+>>>>>>> dc4317f72206739db5b279edc80e979ef907bd2a
 				8BC4D2C7262C0FF5007341D0 /* Persistence.swift in Sources */,
 				8BAEE2172618DE7900DFCDA1 /* GradientTextfield.swift in Sources */,
 				3FC80E4A2709F28A00CBE347 /* Dashboard.swift in Sources */,
@@ -428,7 +434,10 @@
 				8B80D384260BCCB8008BA135 /* ProfileView.swift in Sources */,
 				3F1544102712415800649B6A /* ModelDownloadView.swift in Sources */,
 				8BDAA44E261D2D7500F607FD /* SignInWithAppleButtonCoordinator.swift in Sources */,
+<<<<<<< HEAD
 				CAF552B2272981E00090032E /* NFCReaderClass.swift in Sources */,
+=======
+>>>>>>> dc4317f72206739db5b279edc80e979ef907bd2a
 				3F15440B27122CE400649B6A /* UserModel.swift in Sources */,
 				4C959271270772B2009472F9 /* ScanButton.swift in Sources */,
 				8B80D387260BD622008BA135 /* SettingsViewOld.swift in Sources */,
