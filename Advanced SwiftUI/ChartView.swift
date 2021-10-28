@@ -7,22 +7,12 @@
 
 import SwiftUI
 import SwiftUICharts
-<<<<<<< HEAD
 import CoreML
 struct ChartView:View {
     
 //    let chartStyle = ChartStyle(backgroundColor: Color("secondaryBackground").opacity(0.1), accentColor: Color.white.opacity(0.5), secondGradientColor: Color.orange, textColor: Color.white, legendTextColor: Color.white, dropShadowColor: Color.gray)
     let data: LineChartData = weekOfData()
     
-=======
-
-struct ChartView:View {
-//    var demoData: [Double] = [132, 125, 120, 120, 118, 111, 104,  99,  94,  91,  89,  84]
-//    let chartStyle = ChartStyle(backgroundColor: Color("secondaryBackground").opacity(0.1), accentColor: Color.white.opacity(0.5), secondGradientColor: Color.orange, textColor: Color.white, legendTextColor: Color.white, dropShadowColor: Color.gray)
-    let data: LineChartData = weekOfData()
-    
-    
->>>>>>> dc4317f72206739db5b279edc80e979ef907bd2a
     var body: some View {
         GeometryReader { geometry in
             VStack {
@@ -95,7 +85,6 @@ struct ChartView:View {
 //                       lineType: .line,
 //                       yAxisTitle: "Another Axis")
 //    }
-<<<<<<< HEAD
 //   static func getModelData() -> [Float]
 //   {
 //    var chartValues = [Float]()
@@ -182,18 +171,6 @@ struct ChartView:View {
             LineChartDataPoint(value: Double(getModelData()[5]), xAxisLabel: "S", description: "19:00" ),
             LineChartDataPoint(value: Double(getModelData()[6]) , xAxisLabel: "S", description: "23:00"   ),
             LineChartDataPoint(value: Double(getModelData()[7]) , xAxisLabel: "S", description: "11:00"   )
-=======
-    
-    static func weekOfData() -> LineChartData {
-        let data = LineDataSet(dataPoints: [
-            LineChartDataPoint(value: 100, xAxisLabel: "M", description: "6:00"   ),
-            LineChartDataPoint(value: 160, xAxisLabel: "T", description: "10:00"  ),
-            LineChartDataPoint(value: 125 ,xAxisLabel: "W", description: "12:00"),
-            LineChartDataPoint(value: 185, xAxisLabel: "T", description: "14:00" ),
-            LineChartDataPoint(value: 150, xAxisLabel: "F", description: "17:00"   ),
-            LineChartDataPoint(value: 100, xAxisLabel: "S", description: "19:00" ),
-            LineChartDataPoint(value: 80 , xAxisLabel: "S", description: "23:00"   ),
->>>>>>> dc4317f72206739db5b279edc80e979ef907bd2a
         ],
         legendTitle: "",
         pointStyle: PointStyle(),
