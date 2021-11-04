@@ -38,7 +38,7 @@ extension Dashboard {
                             HStack {
                                 Spacer()
                             }
-                            ChartView()
+                            ChartView(tempData: [207,211, 208, 203, 201, 204, 203, 194, 190, 184, 173, 170])
                         }
                     }
                     .padding(.top,55)

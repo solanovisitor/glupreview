@@ -154,7 +154,7 @@ struct nfcButton: UIViewRepresentable {
                         switch result {
                         case .success(let str):
                             self.data = String(decoding: str, as: UTF8.self)
-                            
+                            var dummy =  [207,211, 208, 203, 201, 204, 203, 194, 190, 184, 173, 170 ]
                         case .failure(let error):
                             print(error)
                         }

@@ -11,13 +11,21 @@ import CoreML
 struct ChartView:View {
     
 //    let chartStyle = ChartStyle(backgroundColor: Color("secondaryBackground").opacity(0.1), accentColor: Color.white.opacity(0.5), secondGradientColor: Color.orange, textColor: Color.white, legendTextColor: Color.white, dropShadowColor: Color.gray)
-    let data: LineChartData = weekOfData()
-    
+   var data: LineChartData = weekOfData()
+    var tempData:[Int]?
     var body: some View {
         GeometryReader { geometry in
             VStack {
-                VStack(alignment: .leading, spacing: 16) {
-                    ZStack {
+         
+                VStack(alignment: .center, spacing: 16) {
+                   
+                    ZStack(alignment: .topTrailing) {
+                        VStack(alignment: .trailing ){
+                           
+                        
+                            legends
+                        }.background(Color.clear).zIndex(1)
+                        .padding(.all, 10.0)
                         RoundedRectangle(cornerRadius: 16)
                             .fill(Color(#colorLiteral(red: 0.10078595578670502, green: 0.06947916746139526, blue: 0.24166665971279144, alpha: 0.8999999761581421)))
                         LineChart(chartData: data)
@@ -59,7 +67,7 @@ struct ChartView:View {
                             .headerBox(chartData: data)
                             //                            .legends(chartData: data, columns: [GridItem(.flexible()), GridItem(.flexible())])
                             .id(data.id)
-                            .frame(minWidth: 150, maxWidth: 900, minHeight: 400, idealHeight: 450, maxHeight: 450, alignment: .center)
+                            .frame(minWidth: 150, maxWidth: 900, minHeight: 400, idealHeight: 410, maxHeight: 410, alignment: .center)
                             .padding([.horizontal])
                         
                         //                            .navigationTitle("Week of Data")
@@ -71,8 +79,32 @@ struct ChartView:View {
                 .frame(maxWidth: geometry.size.width)
                 .frame(height: geometry.size.height + 40)
                 .frame(alignment: .center)
+            }.onAppear{
+                print(tempData)
             }
-        }.frame(width: 380, height: 450)
+        }.frame(width: 380, height: 410)
+    }
+    var legends: some View {
+        VStack(alignment: .leading) {
+            HStack{
+                Circle()
+                    .fill(Colors.GradientUpperOrange)
+                    .frame(width: 10, height: 10)
+
+                Text("Past 3 hours")
+                    .font(.system(size: 15)).foregroundColor(.white.opacity(0.7))
+            }.padding(.top, 16)
+            HStack{
+                Circle()
+                    .fill(Colors.GradinetUpperBlue1)
+                    .frame(width: 10, height: 10)
+
+                Text("Next 2 hours").font(.system(size: 15)).foregroundColor(.white.opacity(0.7))
+            }
+//            ForEach(data.legends, id: \.id) { legend in
+//                legend.getLegend(textColor: .primary)
+//            }
+        }
     }
 //    private var extraLineData: [ExtraLineDataPoint] {
 //        [ExtraLineDataPoint(value: 8000),
@@ -121,7 +153,7 @@ struct ChartView:View {
 //      return chartValues
 //    }
     
-    static func getModelData() -> [Float]
+   static func getModelData() -> [Float]
     {
      var chartValues = [Float]()
          do {
@@ -132,6 +164,7 @@ struct ChartView:View {
              print(prediction.Identity , prediction.featureNames, prediction.featureValue(for: "abc"))
              var arrOfInput = [SugarCalculation2Input]()
             var dummy =  [207,211, 208, 203, 201, 204, 203, 194, 190, 184, 173, 170 ]
+            
              for i in 0...dummy.count - 1{
                  mlArr[i] = NSNumber(floatLiteral: Double(Float32(dummy[i])))
                 arrOfInput.append(SugarCalculation2Input(bidirectional_1_input: mlArr))
@@ -160,8 +193,7 @@ struct ChartView:View {
     
     
     static func weekOfData() -> LineChartData {
-        getModelData()
-      
+        
         let data = LineDataSet(dataPoints: [
             LineChartDataPoint(value: Double(getModelData()[0]), xAxisLabel: "M", description: "6:00"   ),
             LineChartDataPoint(value: Double(getModelData()[1]), xAxisLabel: "T", description: "10:00"  ),
@@ -170,16 +202,17 @@ struct ChartView:View {
             LineChartDataPoint(value: Double(getModelData()[4]), xAxisLabel: "F", description: "17:00"   ),
             LineChartDataPoint(value: Double(getModelData()[5]), xAxisLabel: "S", description: "19:00" ),
             LineChartDataPoint(value: Double(getModelData()[6]) , xAxisLabel: "S", description: "23:00"   ),
-            LineChartDataPoint(value: Double(getModelData()[7]) , xAxisLabel: "S", description: "11:00"   )
+            LineChartDataPoint(value: Double(getModelData()[7]) , xAxisLabel: "S", description: "11:00"   ),
+          
         ],
-        legendTitle: "",
+        legendTitle: "Past 3 hours",
         pointStyle: PointStyle(),
         style: LineStyle(lineColour: ColourStyle(colour: Colors.GradientUpperOrange), lineType: .curvedLine))
         
-        let gridStyle = GridStyle(numberOfLines: 7,
+        let gridStyle = GridStyle(numberOfLines: 5,
                                   lineColour   : Color(.lightGray).opacity(0.5),
                                   lineWidth    : 1,
-                                  dash         : [8],
+                                  dash         : [-1],
                                   dashPhase    : 0)
         
         let chartStyle = LineChartStyle(infoBoxPlacement    : .infoBox(isStatic: false),
@@ -198,13 +231,12 @@ struct ChartView:View {
                                         yAxisGridStyle      : gridStyle,
                                         yAxisLabelPosition  : .leading,
                                         yAxisLabelColour    : Color.white,
-                                        yAxisNumberOfLabels : 7,
+                                        yAxisNumberOfLabels : 5,
                                         
                                         baseline            : .minimumWithMaximum(of: 40),
                                         topLine             : .maximum(of: 280),
                                         
                                         globalAnimation     : .easeOut(duration: 1))
-        
         
         
         let chartData = LineChartData(dataSets: data,
@@ -223,14 +255,19 @@ struct ChartView:View {
                 .map(\.value)
                 .sink { value in
                     var dotStyle: DotStyle
-                    if value < 10_000 {
-                        dotStyle = DotStyle(fillColour: .red)
-                    } else if value >= 10_000 && value <= 15_000 {
-                        dotStyle = DotStyle(fillColour: .blue)
+//                    if value < 10_000 {
+//                        dotStyle = DotStyle(fillColour: .red)
+//                    } else if value >= 10_000 && value <= 15_000 {
+//                        dotStyle = DotStyle(fillColour: .blue)
+//                    } else {
+//                        dotStyle = DotStyle(fillColour: .green)
+//                    }
+                    if value > 0 {
+                        dotStyle = DotStyle(fillColour: Colors.GradientUpperOrange  )
                     } else {
                         dotStyle = DotStyle(fillColour: .green)
                     }
-                    withAnimation(.linear(duration: 0.5)) {
+                    withAnimation(.linear(duration: 0.6)) {
                         chartData.chartStyle.markerType = .vertical(attachment: .line(dot: .style(dotStyle)))
                     }
                 }

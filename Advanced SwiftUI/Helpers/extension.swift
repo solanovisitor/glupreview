@@ -29,7 +29,10 @@ public struct Colors {
     public static let DarkPurple:Color = Color(hexString: "#1B205E")
     public static let BorderBlue:Color = Color(hexString: "#4EBCFF")
     public static let GradientUpperOrange = Color(hexString: "#F4A164")
-    public static let GradientUpperOrange1 = Color(hexString: "#8B85E2")
+    public static let GradientUpperBlue1 = Color(hexString: "#8B85E2")
+    public static let TextColor: Color =   Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.4875264504))
+    
+                                        
 }
 
 public struct GradientColor {
