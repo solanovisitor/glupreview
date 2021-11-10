@@ -7,15 +7,47 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "806A2D3D-EAAE-48AE-B2FE-F62878BFB2FB"
+            uuid = "3D3B6F8C-88A9-49A0-A66E-848A6AB4A8E3"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Advanced SwiftUI/Helpers/NFCReader.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "113"
-            endingLineNumber = "113"
+            startingLineNumber = "167"
+            endingLineNumber = "167"
+            landmarkName = "readerSession(_:didInvalidateWithError:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "34E23745-5AA8-4DBA-AF6C-7B3D83520C3A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Advanced SwiftUI/Helpers/NFCReader.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "171"
+            endingLineNumber = "171"
+            landmarkName = "readerSession(_:didDetectNDEFs:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D5ADA909-556A-4B0D-8E4A-4D0467E3810D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Advanced SwiftUI/Helpers/NFCReader.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "254"
+            endingLineNumber = "254"
             landmarkName = "tagReaderSession(_:didDetect:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -23,15 +55,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "BCA26F24-5582-4A20-848F-8005FAA35651"
+            uuid = "8500BDC2-92DB-4EED-B901-64AB25C54991"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Advanced SwiftUI/Helpers/NFCReader.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "91"
-            endingLineNumber = "91"
+            startingLineNumber = "555"
+            endingLineNumber = "555"
             landmarkName = "tagReaderSession(_:didDetect:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -39,15 +71,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "A56181CE-729F-45D4-9B84-77FC1B569D35"
-            shouldBeEnabled = "Yes"
+            uuid = "EE45FB14-CDAD-4492-9E0B-3177D96F49E3"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Advanced SwiftUI/Helpers/NFCReader.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "85"
-            endingLineNumber = "85"
+            startingLineNumber = "571"
+            endingLineNumber = "571"
             landmarkName = "tagReaderSession(_:didDetect:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -55,15 +87,31 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "66E43A78-06BE-44BF-A8B9-4E532AB0AE75"
+            uuid = "4F5F4634-E619-473E-8617-0E5A1C71294C"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Advanced SwiftUI/Helpers/NFCReader.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "104"
-            endingLineNumber = "104"
+            startingLineNumber = "537"
+            endingLineNumber = "537"
+            landmarkName = "tagReaderSession(_:didDetect:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4431390E-B956-402D-8737-53E4F5DEACD1"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Advanced SwiftUI/Helpers/NFCReader.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "510"
+            endingLineNumber = "510"
             landmarkName = "tagReaderSession(_:didDetect:)"
             landmarkType = "7">
          </BreakpointContent>

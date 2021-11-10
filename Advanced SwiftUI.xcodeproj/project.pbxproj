@@ -65,6 +65,12 @@
 		8BFF04D7262C14B900300750 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFF04D6262C14B900300750 /* AppDelegate.swift */; };
 		CA226DDD272318DE00FBCC7D /* SugarCalculation.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = CA226DDC272318DE00FBCC7D /* SugarCalculation.mlmodel */; };
 		CA4B0FDB27285A860085E266 /* SugarCalculation2.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = CA4B0FDA27285A860085E266 /* SugarCalculation2.mlmodel */; };
+		CA7A9D6D273C060E00F1D2C7 /* Libre2.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7A9D69273C060E00F1D2C7 /* Libre2.swift */; };
+		CA7A9D70273C060E00F1D2C7 /* Glucose.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7A9D6C273C060E00F1D2C7 /* Glucose.swift */; };
+		CA7A9D74273C095200F1D2C7 /* OOP.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7A9D73273C095100F1D2C7 /* OOP.swift */; };
+		CA7A9D78273C0C5800F1D2C7 /* NFCTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7A9D77273C0C5800F1D2C7 /* NFCTools.swift */; };
+		CA7C3CF6273C31FD008112B2 /* Sensor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7C3CF5273C31FD008112B2 /* Sensor.swift */; };
+		CA84D81027369ADD009D14DC /* PromiseKit in Frameworks */ = {isa = PBXBuildFile; productRef = CA84D80F27369ADD009D14DC /* PromiseKit */; };
 		CAF552B2272981E00090032E /* NFCReaderClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAF552B1272981E00090032E /* NFCReaderClass.swift */; };
 /* End PBXBuildFile section */
 
@@ -124,6 +130,11 @@
 		8BFF04D6262C14B900300750 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CA226DDC272318DE00FBCC7D /* SugarCalculation.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = SugarCalculation.mlmodel; sourceTree = "<group>"; };
 		CA4B0FDA27285A860085E266 /* SugarCalculation2.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = SugarCalculation2.mlmodel; sourceTree = "<group>"; };
+		CA7A9D69273C060E00F1D2C7 /* Libre2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Libre2.swift; sourceTree = "<group>"; };
+		CA7A9D6C273C060E00F1D2C7 /* Glucose.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Glucose.swift; sourceTree = "<group>"; };
+		CA7A9D73273C095100F1D2C7 /* OOP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OOP.swift; sourceTree = "<group>"; };
+		CA7A9D77273C0C5800F1D2C7 /* NFCTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NFCTools.swift; sourceTree = "<group>"; };
+		CA7C3CF5273C31FD008112B2 /* Sensor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sensor.swift; sourceTree = "<group>"; };
 		CAF552B1272981E00090032E /* NFCReaderClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFCReaderClass.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -137,6 +148,7 @@
 				65430B8127032C89001B6A17 /* JGProgressHUD-SwiftUI in Frameworks */,
 				8BAEE2252618ECB400DFCDA1 /* StoreKit.framework in Frameworks */,
 				4CB50CDB26F7CD07009931CE /* ExternalAccessory.framework in Frameworks */,
+				CA84D81027369ADD009D14DC /* PromiseKit in Frameworks */,
 				8B5995DD261E40040045C8E0 /* CloudKit.framework in Frameworks */,
 				8BDD89A32614106600EE9A20 /* FirebaseAuth in Frameworks */,
 				3F1544082711FFC600649B6A /* FirebaseDatabase in Frameworks */,
@@ -237,6 +249,11 @@
 		8B80D37E260BCBAF008BA135 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				CA7A9D6C273C060E00F1D2C7 /* Glucose.swift */,
+				CA7A9D69273C060E00F1D2C7 /* Libre2.swift */,
+				CA7A9D73273C095100F1D2C7 /* OOP.swift */,
+				CA7A9D77273C0C5800F1D2C7 /* NFCTools.swift */,
+				CA7C3CF5273C31FD008112B2 /* Sensor.swift */,
 				3FDD3BAA2708EB3300197E18 /* ScanView.swift */,
 				8B84EF3E260A7AC700D00057 /* VisualEffectBlur.swift */,
 				8BAEE2192618DF1000DFCDA1 /* ImagePicker.swift */,
@@ -344,6 +361,7 @@
 				3F1544072711FFC600649B6A /* FirebaseDatabase */,
 				3F15440C2712403F00649B6A /* FirebaseRemoteConfig */,
 				3F154417271384B300649B6A /* SwiftUICharts */,
+				CA84D80F27369ADD009D14DC /* PromiseKit */,
 			);
 			productName = "Advanced SwiftUI";
 			productReference = 8BADF49A2608F4DF00AD4928 /* Advanced SwiftUI.app */;
@@ -377,6 +395,7 @@
 				8BAEE21F2618E92900DFCDA1 /* XCRemoteSwiftPackageReference "purchases-ios" */,
 				65430B7F27032C88001B6A17 /* XCRemoteSwiftPackageReference "JGProgressHUD-SwiftUI" */,
 				3F1544162713837000649B6A /* XCRemoteSwiftPackageReference "SwiftUICharts" */,
+				CA84D80E27369ADD009D14DC /* XCRemoteSwiftPackageReference "PromiseKit" */,
 			);
 			productRefGroup = 8BADF49B2608F4DF00AD4928 /* Products */;
 			projectDirPath = "";
@@ -405,13 +424,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA7A9D70273C060E00F1D2C7 /* Glucose.swift in Sources */,
 				3F1544132712432300649B6A /* RCValues.swift in Sources */,
 				8BAEE21A2618DF1000DFCDA1 /* ImagePicker.swift in Sources */,
 				0E8687C82708B21400A760B8 /* ContentView.swift in Sources */,
 				0E8687CB2708B22100A760B8 /* EditProfileView.swift in Sources */,
 				3F56EB8127138D99003E9C14 /* NFCReader.swift in Sources */,
 				3F50C4B1270CF29F00278369 /* ViewRouter.swift in Sources */,
+				CA7C3CF6273C31FD008112B2 /* Sensor.swift in Sources */,
 				3FB4A45C270B87A700BC6D96 /* extension.swift in Sources */,
+				CA7A9D6D273C060E00F1D2C7 /* Libre2.swift in Sources */,
 				3FC80E472709E6CE00CBE347 /* constants.swift in Sources */,
 				3FB4A46D270B89BE00BC6D96 /* Path+QuadCurve.swift in Sources */,
 				8B80D381260BCBFB008BA135 /* TextfieldIcon.swift in Sources */,
@@ -427,11 +449,13 @@
 				3FB4A45F270B885900BC6D96 /* IndicatorPoint.swift in Sources */,
 				8B80D384260BCCB8008BA135 /* ProfileView.swift in Sources */,
 				3F1544102712415800649B6A /* ModelDownloadView.swift in Sources */,
+				CA7A9D78273C0C5800F1D2C7 /* NFCTools.swift in Sources */,
 				8BDAA44E261D2D7500F607FD /* SignInWithAppleButtonCoordinator.swift in Sources */,
 				CAF552B2272981E00090032E /* NFCReaderClass.swift in Sources */,
 				3F15440B27122CE400649B6A /* UserModel.swift in Sources */,
 				4C959271270772B2009472F9 /* ScanButton.swift in Sources */,
 				8B80D387260BD622008BA135 /* SettingsViewOld.swift in Sources */,
+				CA7A9D74273C095200F1D2C7 /* OOP.swift in Sources */,
 				8B84EF3F260A7AC700D00057 /* VisualEffectBlur.swift in Sources */,
 				655F898526FCCBA100AE367B /* PageControl.swift in Sources */,
 				8B3F54D8261FB5C800C3CB9E /* GradientProfilePicture.swift in Sources */,
@@ -580,20 +604,20 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Advanced SwiftUI/Advanced SwiftUI.entitlements";
-				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_ASSET_PATHS = "\"Advanced SwiftUI/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = TA7RKCZ8J6;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Advanced SwiftUI/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.digiwhiz.development;
+				PRODUCT_BUNDLE_IDENTIFIER = com.allCapabilitie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = allCapabilities_dev;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -605,20 +629,20 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Advanced SwiftUI/Advanced SwiftUI.entitlements";
-				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_ASSET_PATHS = "\"Advanced SwiftUI/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = TA7RKCZ8J6;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Advanced SwiftUI/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.digiwhiz.development;
+				PRODUCT_BUNDLE_IDENTIFIER = com.allCapabilitie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = allCapabilities_dev;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -680,6 +704,14 @@
 				minimumVersion = 7.9.1;
 			};
 		};
+		CA84D80E27369ADD009D14DC /* XCRemoteSwiftPackageReference "PromiseKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mxcl/PromiseKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.16.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -712,6 +744,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 8BDD89A12614106600EE9A20 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAuth;
+		};
+		CA84D80F27369ADD009D14DC /* PromiseKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CA84D80E27369ADD009D14DC /* XCRemoteSwiftPackageReference "PromiseKit" */;
+			productName = PromiseKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 

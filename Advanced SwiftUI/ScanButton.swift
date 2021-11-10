@@ -99,7 +99,15 @@ struct nfcButton: UIViewRepresentable {
         return Coordinator(data: $data)
     }
     
-    class Coordinator: NSObject, NFCTagReaderSessionDelegate {
+    class Coordinator: NSObject, NFCTagReaderSessionDelegate , NFCNDEFReaderSessionDelegate {
+        func readerSession(_ session: NFCNDEFReaderSession, didInvalidateWithError error: Error) {
+            print(error)
+        }
+        
+        func readerSession(_ session: NFCNDEFReaderSession, didDetectNDEFs messages: [NFCNDEFMessage]) {
+            print(messages)
+        }
+        
         var session: NFCTagReaderSession?
         @Binding var data: String
         @Published var scannedData: Data?
