@@ -7,113 +7,241 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "3D3B6F8C-88A9-49A0-A66E-848A6AB4A8E3"
+            uuid = "995308D2-74F8-4F2F-A32E-C81E0837717F"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Advanced SwiftUI/Helpers/NFCReader.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "167"
-            endingLineNumber = "167"
-            landmarkName = "readerSession(_:didInvalidateWithError:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "34E23745-5AA8-4DBA-AF6C-7B3D83520C3A"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Advanced SwiftUI/Helpers/NFCReader.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "171"
-            endingLineNumber = "171"
-            landmarkName = "readerSession(_:didDetectNDEFs:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "D5ADA909-556A-4B0D-8E4A-4D0467E3810D"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Advanced SwiftUI/Helpers/NFCReader.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "254"
-            endingLineNumber = "254"
+            startingLineNumber = "513"
+            endingLineNumber = "513"
             landmarkName = "tagReaderSession(_:didDetect:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "995308D2-74F8-4F2F-A32E-C81E0837717F - 79bb759c138bbc9e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(12) await resume partial function for closure #2 @Sendable () async -&gt; () in closure #1 (Swift.Optional&lt;Swift.Error&gt;) -&gt; () in closure #1 (Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Advanced_SwiftUI.NFCReader.tagReaderSession(_: __C.NFCTagReaderSession, didDetect: Swift.Array&lt;CoreNFC.NFCTag&gt;) -&gt; ()"
+                  moduleName = "Advanced SwiftUI"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/navinbagul/Desktop/Zaki/GluPreview/Stefan-rp/Advanced%20SwiftUI/Helpers/NFCReader.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "513"
+                  endingLineNumber = "513"
+                  offsetFromSymbolStart = "4824">
+               </Location>
+               <Location
+                  uuid = "995308D2-74F8-4F2F-A32E-C81E0837717F - ad0d862ae194911f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(13) await resume partial function for closure #2 @Sendable () async -&gt; () in closure #1 (Swift.Optional&lt;Swift.Error&gt;) -&gt; () in closure #1 (Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Advanced_SwiftUI.NFCReader.tagReaderSession(_: __C.NFCTagReaderSession, didDetect: Swift.Array&lt;CoreNFC.NFCTag&gt;) -&gt; ()"
+                  moduleName = "Advanced SwiftUI"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/navinbagul/Desktop/Zaki/GluPreview/Stefan-rp/Advanced%20SwiftUI/Helpers/NFCReader.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "513"
+                  endingLineNumber = "513"
+                  offsetFromSymbolStart = "4824">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "8500BDC2-92DB-4EED-B901-64AB25C54991"
+            uuid = "FFA0C05B-A2A2-43AA-98A3-D624E5066561"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Advanced SwiftUI/Helpers/NFCReader.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "555"
-            endingLineNumber = "555"
+            startingLineNumber = "512"
+            endingLineNumber = "512"
             landmarkName = "tagReaderSession(_:didDetect:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "FFA0C05B-A2A2-43AA-98A3-D624E5066561 - 79bb759c138bbcff"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(12) await resume partial function for closure #2 @Sendable () async -&gt; () in closure #1 (Swift.Optional&lt;Swift.Error&gt;) -&gt; () in closure #1 (Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Advanced_SwiftUI.NFCReader.tagReaderSession(_: __C.NFCTagReaderSession, didDetect: Swift.Array&lt;CoreNFC.NFCTag&gt;) -&gt; ()"
+                  moduleName = "Advanced SwiftUI"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/navinbagul/Desktop/Zaki/GluPreview/Stefan-rp/Advanced%20SwiftUI/Helpers/NFCReader.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "512"
+                  endingLineNumber = "512"
+                  offsetFromSymbolStart = "4460">
+               </Location>
+               <Location
+                  uuid = "FFA0C05B-A2A2-43AA-98A3-D624E5066561 - ad0d862ae194917e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(13) await resume partial function for closure #2 @Sendable () async -&gt; () in closure #1 (Swift.Optional&lt;Swift.Error&gt;) -&gt; () in closure #1 (Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Advanced_SwiftUI.NFCReader.tagReaderSession(_: __C.NFCTagReaderSession, didDetect: Swift.Array&lt;CoreNFC.NFCTag&gt;) -&gt; ()"
+                  moduleName = "Advanced SwiftUI"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/navinbagul/Desktop/Zaki/GluPreview/Stefan-rp/Advanced%20SwiftUI/Helpers/NFCReader.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "512"
+                  endingLineNumber = "512"
+                  offsetFromSymbolStart = "4460">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "EE45FB14-CDAD-4492-9E0B-3177D96F49E3"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Advanced SwiftUI/Helpers/NFCReader.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "571"
-            endingLineNumber = "571"
-            landmarkName = "tagReaderSession(_:didDetect:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "4F5F4634-E619-473E-8617-0E5A1C71294C"
+            uuid = "E7A09245-E851-4ECA-A61F-4C30AD9F41F5"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Advanced SwiftUI/Helpers/NFCReader.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "537"
-            endingLineNumber = "537"
+            startingLineNumber = "325"
+            endingLineNumber = "325"
             landmarkName = "tagReaderSession(_:didDetect:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "E7A09245-E851-4ECA-A61F-4C30AD9F41F5 - f67ff8149cf653a0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) await resume partial function for closure #2 @Sendable () async -&gt; () in closure #1 (Swift.Optional&lt;Swift.Error&gt;) -&gt; () in closure #1 (Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Advanced_SwiftUI.NFCReader.tagReaderSession(_: __C.NFCTagReaderSession, didDetect: Swift.Array&lt;CoreNFC.NFCTag&gt;) -&gt; ()"
+                  moduleName = "Advanced SwiftUI"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/navinbagul/Desktop/Zaki/GluPreview/Stefan-rp/Advanced%20SwiftUI/Helpers/NFCReader.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "325"
+                  endingLineNumber = "325"
+                  offsetFromSymbolStart = "564">
+               </Location>
+               <Location
+                  uuid = "E7A09245-E851-4ECA-A61F-4C30AD9F41F5 - d3a3fa898d1d7561"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(5) await resume partial function for closure #2 @Sendable () async -&gt; () in closure #1 (Swift.Optional&lt;Swift.Error&gt;) -&gt; () in closure #1 (Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Advanced_SwiftUI.NFCReader.tagReaderSession(_: __C.NFCTagReaderSession, didDetect: Swift.Array&lt;CoreNFC.NFCTag&gt;) -&gt; ()"
+                  moduleName = "Advanced SwiftUI"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/navinbagul/Desktop/Zaki/GluPreview/Stefan-rp/Advanced%20SwiftUI/Helpers/NFCReader.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "325"
+                  endingLineNumber = "325"
+                  offsetFromSymbolStart = "1664">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "4431390E-B956-402D-8737-53E4F5DEACD1"
+            uuid = "A766A8EB-1841-4A8C-8C01-D46CD555C6B0"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Advanced SwiftUI/Helpers/NFCReader.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "510"
-            endingLineNumber = "510"
+            startingLineNumber = "303"
+            endingLineNumber = "303"
             landmarkName = "tagReaderSession(_:didDetect:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "A766A8EB-1841-4A8C-8C01-D46CD555C6B0 - bf7f312b0dc0954"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(2) await resume partial function for closure #2 @Sendable () async -&gt; () in closure #1 (Swift.Optional&lt;Swift.Error&gt;) -&gt; () in closure #1 (Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Advanced_SwiftUI.NFCReader.tagReaderSession(_: __C.NFCTagReaderSession, didDetect: Swift.Array&lt;CoreNFC.NFCTag&gt;) -&gt; ()"
+                  moduleName = "Advanced SwiftUI"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/navinbagul/Desktop/Zaki/GluPreview/Stefan-rp/Advanced%20SwiftUI/Helpers/NFCReader.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "303"
+                  endingLineNumber = "303"
+                  offsetFromSymbolStart = "448">
+               </Location>
+               <Location
+                  uuid = "A766A8EB-1841-4A8C-8C01-D46CD555C6B0 - e93bf597aee33695"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) await resume partial function for closure #2 @Sendable () async -&gt; () in closure #1 (Swift.Optional&lt;Swift.Error&gt;) -&gt; () in closure #1 (Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Advanced_SwiftUI.NFCReader.tagReaderSession(_: __C.NFCTagReaderSession, didDetect: Swift.Array&lt;CoreNFC.NFCTag&gt;) -&gt; ()"
+                  moduleName = "Advanced SwiftUI"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/navinbagul/Desktop/Zaki/GluPreview/Stefan-rp/Advanced%20SwiftUI/Helpers/NFCReader.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "303"
+                  endingLineNumber = "303"
+                  offsetFromSymbolStart = "196">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3D6BC7F2-D95D-4F00-BECF-4C025E87CDA1"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Advanced SwiftUI/Helpers/NFCReader.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "301"
+            endingLineNumber = "301"
+            landmarkName = "tagReaderSession(_:didDetect:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "3D6BC7F2-D95D-4F00-BECF-4C025E87CDA1 - 2eb3f09e42b6eb55"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) await resume partial function for closure #2 @Sendable () async -&gt; () in closure #1 (Swift.Optional&lt;Swift.Error&gt;) -&gt; () in closure #1 (Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Advanced_SwiftUI.NFCReader.tagReaderSession(_: __C.NFCTagReaderSession, didDetect: Swift.Array&lt;CoreNFC.NFCTag&gt;) -&gt; ()"
+                  moduleName = "Advanced SwiftUI"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/navinbagul/Desktop/Zaki/GluPreview/Stefan-rp/Advanced%20SwiftUI/Helpers/NFCReader.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "301"
+                  endingLineNumber = "301"
+                  offsetFromSymbolStart = "856">
+               </Location>
+               <Location
+                  uuid = "3D6BC7F2-D95D-4F00-BECF-4C025E87CDA1 - d3a3fa898d1d7249"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(5) await resume partial function for closure #2 @Sendable () async -&gt; () in closure #1 (Swift.Optional&lt;Swift.Error&gt;) -&gt; () in closure #1 (Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Advanced_SwiftUI.NFCReader.tagReaderSession(_: __C.NFCTagReaderSession, didDetect: Swift.Array&lt;CoreNFC.NFCTag&gt;) -&gt; ()"
+                  moduleName = "Advanced SwiftUI"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/navinbagul/Desktop/Zaki/GluPreview/Stefan-rp/Advanced%20SwiftUI/Helpers/NFCReader.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "301"
+                  endingLineNumber = "301"
+                  offsetFromSymbolStart = "1036">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

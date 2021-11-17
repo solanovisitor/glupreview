@@ -163,6 +163,9 @@ class NFCReader: NSObject, ObservableObject, NFCTagReaderSessionDelegate , NFCND
     var connectedTag: NFCISO15693Tag?
     var systemInfo: NFCISO15693SystemInfo!
     var sensor: Sensor!
+    var securityChallenge: Data = Data()
+    var authContext: Int = 0
+    var sessionInfo: Data = Data()
     func readerSession(_ session: NFCNDEFReaderSession, didInvalidateWithError error: Error) {
         print(session)
     }
@@ -294,7 +297,10 @@ class NFCReader: NSObject, ObservableObject, NFCTagReaderSessionDelegate , NFCND
                             // The first reading prepends further 7 0xA5 dummy bytes
                             
                             do {
-                                sensor.patchInfo = Data(try await tag.customCommand(requestFlags: .highDataRate, customCommandCode: 0xA1, customRequestParameters: Data()))
+                               
+                                print(Data() , 0xA1, tag)
+                                print(Data(try await tag.customCommand(requestFlags: [.highDataRate], customCommandCode: 0xA1, customRequestParameters: Data())))
+                                sensor.patchInfo = Data(try await tag.customCommand(requestFlags: [.highDataRate], customCommandCode: 0xA1, customRequestParameters: Data(bytes: [UInt8(0x0D), UInt8(0x01)])))
                                 print(sensor.patchInfo)
                             } catch {
                                 failedToScan = true
@@ -314,7 +320,9 @@ class NFCReader: NSObject, ObservableObject, NFCTagReaderSessionDelegate , NFCND
                             }
                             
                             do {
-                                sensor.patchInfo = Data(try await tag.customCommand(requestFlags: .highDataRate, customCommandCode: 0xA1, customRequestParameters: Data()))
+                                print(tag)
+                                
+                                sensor.patchInfo = Data(try await tag.customCommand(requestFlags: .highDataRate, customCommandCode: 0xA1, customRequestParameters: Data(bytes: [UInt8(0x0D), UInt8(0x01)])))
                             } catch {
                                 print("NFC: error while getting patch info: \(error.localizedDescription)")
                                 if requestedRetry > retries && systemInfo != nil {
