@@ -514,3 +514,14 @@ enum TaskRequest {
     case prolong
     case dump
 }
+class History: ObservableObject {
+    @Published var values:        [Glucose] = []
+    @Published var rawValues:     [Glucose] = []
+    @Published var rawTrend:      [Glucose] = []
+    @Published var factoryValues: [Glucose] = []
+    @Published var factoryTrend:  [Glucose] = []
+    @Published var calibratedValues: [Glucose] = []
+    @Published var calibratedTrend:  [Glucose] = []
+    @Published var storedValues:     [Glucose] = []
+    @Published var nightscoutValues: [Glucose] = []
+}

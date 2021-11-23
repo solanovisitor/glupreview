@@ -38,6 +38,7 @@ extension Dashboard {
                             HStack {
                                 Spacer()
                             }
+                            
                             ChartView(tempData: [207,211, 208, 203, 201, 204, 203, 194, 190, 184, 173, 170])
                         }
                     }

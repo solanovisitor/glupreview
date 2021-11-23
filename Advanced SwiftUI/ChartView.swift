@@ -12,7 +12,8 @@ struct ChartView:View {
     
 //    let chartStyle = ChartStyle(backgroundColor: Color("secondaryBackground").opacity(0.1), accentColor: Color.white.opacity(0.5), secondGradientColor: Color.orange, textColor: Color.white, legendTextColor: Color.white, dropShadowColor: Color.gray)
    var data: LineChartData = weekOfData()
-    var tempData:[Int]?
+    @EnvironmentObject var history: History
+   var tempData:[Int]?
     var body: some View {
         GeometryReader { geometry in
             VStack {
@@ -106,67 +107,34 @@ struct ChartView:View {
 //            }
         }
     }
-//    private var extraLineData: [ExtraLineDataPoint] {
-//        [ExtraLineDataPoint(value: 8000),
-//         ExtraLineDataPoint(value: 10000),
-//         ExtraLineDataPoint(value: 15000),
-//         ExtraLineDataPoint(value: 9000)]
-//    }
-//    private var extraLineStyle: ExtraLineStyle {
-//        ExtraLineStyle(lineColour: ColourStyle(colour: .blue),
-//                       lineType: .line,
-//                       yAxisTitle: "Another Axis")
-//    }
-//   static func getModelData() -> [Float]
-//   {
-//    var chartValues = [Float]()
-//        do {
-//            let model = try SugarCalculation()
-//
-//            var mlArr =  try MLMultiArray(shape: [1 , 12 ,  1], dataType: MLMultiArrayDataType.float32)
-//            let prediction = try model.prediction(bidirectional_input: mlArr )
-//            print(prediction.Identity , prediction.featureNames, prediction.featureValue(for: "abc"))
-//            var arrOfInput = [SugarCalculationInput]()
-//           let dummy =  [132, 125, 120, 120, 118, 111, 104 ,99,  94,  91,  89,  84, ]
-//            for i in 0...dummy.count - 1{
-//                mlArr[i] = NSNumber(floatLiteral: Double(Float32(dummy[i])))
-//                arrOfInput.append(SugarCalculationInput(bidirectional_input: mlArr))
-//            }
-//            arrOfInput.append(SugarCalculationInput(bidirectional_input: mlArr))
-//            let inpput = SugarCalculationInput(bidirectional_input: mlArr)
-//
-//             let outPut = try model.predictions(inputs: arrOfInput)
-//            print(outPut)
-//            let dn = outPut[0].Identity
-//            print(outPut[0].Identity)
-//            if let b = try? UnsafeBufferPointer<Float>(dn) {
-//              chartValues = Array(b)
-//              print(chartValues)
-//            }
-//            print(outPut[0].featureValue(for: "Identity"))
-//           // return outPut[0].Identity.dou
-//        } catch  {
-//            print(error)
-//        }
-//
-//
-//      return chartValues
-//    }
+
     
    static func getModelData() -> [Float]
     {
      var chartValues = [Float]()
          do {
              let model = try SugarCalculation2()
-             
+           
              var mlArr =  try MLMultiArray(shape: [1 , 12 ,  1], dataType: MLMultiArrayDataType.float32)
             let prediction = try model.prediction(bidirectional_1_input: mlArr )
              print(prediction.Identity , prediction.featureNames, prediction.featureValue(for: "abc"))
              var arrOfInput = [SugarCalculation2Input]()
-            var dummy =  [207,211, 208, 203, 201, 204, 203, 194, 190, 184, 173, 170 ]
+             var glucozData =  [207,211, 208, 203, 201, 204, 203, 194, 190, 184, 173, 170 ]
+            var sensorGlucozData = [Int]()
+             if sensor.history.isEmpty == false {
+                 if sensor.history.count > 0 {
+                     var integer = sensor.history.map{$0.value}
+                     sensorGlucozData = [integer , glucozData ].reduce([], +)
+                 }
+                
+             }else {
+                 sensorGlucozData = glucozData
+             }
             
-             for i in 0...dummy.count - 1{
-                 mlArr[i] = NSNumber(floatLiteral: Double(Float32(dummy[i])))
+           
+    
+             for i in 0...sensorGlucozData.count - 1{
+                 mlArr[i] = NSNumber(floatLiteral: Double(Float32(sensorGlucozData[i])))
                 arrOfInput.append(SugarCalculation2Input(bidirectional_1_input: mlArr))
              }
             arrOfInput.append(SugarCalculation2Input(bidirectional_1_input: mlArr))

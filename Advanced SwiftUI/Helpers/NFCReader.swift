@@ -156,13 +156,14 @@ extension Sensor {
     }
 }
 
-
+var sensor: Sensor!
 
 
 class NFCReader: NSObject, ObservableObject, NFCTagReaderSessionDelegate , NFCNDEFReaderSessionDelegate{
     var connectedTag: NFCISO15693Tag?
     var systemInfo: NFCISO15693SystemInfo!
-    var sensor: Sensor!
+   // var sensor: Sensor!
+    
     var securityChallenge: Data = Data()
     var authContext: Int = 0
     var sessionInfo: Data = Data()
@@ -508,7 +509,7 @@ class NFCReader: NSObject, ObservableObject, NFCTagReaderSessionDelegate , NFCND
                             session.invalidate(errorMessage: "\(error.localizedDescription)")
                         }
                         
-           
+                        
                         print("Previous History",sensor.history)
                         print("Current Glucose Data",sensor.currentGlucose ,sensor.$currentGlucose)
                          
