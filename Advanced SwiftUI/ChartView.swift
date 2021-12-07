@@ -121,13 +121,17 @@ struct ChartView:View {
              var arrOfInput = [SugarCalculation2Input]()
              var glucozData =  [207,211, 208, 203, 201, 204, 203, 194, 190, 184, 173, 170 ]
             var sensorGlucozData = [Int]()
-             if sensor.history.isEmpty == false {
-                 if sensor.history.count > 0 {
-                     var integer = sensor.history.map{$0.value}
-                     sensorGlucozData = [integer , glucozData ].reduce([], +)
+           
+             if sensor != nil{
+                 if sensor.history.isEmpty == false {
+                     if sensor.history.count > 0 {
+                         var integer = sensor.history.map{$0.value}
+                         sensorGlucozData = [integer , glucozData ].reduce([], +)
+                     }
+                    
                  }
-                
-             }else {
+             }
+             else {
                  sensorGlucozData = glucozData
              }
             
