@@ -99,6 +99,7 @@ extension Dashboard {
             .toolbar(content: {
                 NavigationLink(destination: SettingsView()) {
                     Button(action: {
+                        
                         print("button pressed")
                     }) {
                         Image(systemName: "gearshape.fill")

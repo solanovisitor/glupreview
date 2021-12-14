@@ -115,17 +115,17 @@ struct ChartView:View {
          do {
              let model = try SugarCalculation2()
            
-             var mlArr =  try MLMultiArray(shape: [1 , 12 ,  1], dataType: MLMultiArrayDataType.float32)
+             let mlArr =  try MLMultiArray(shape: [1 , 12 ,  1], dataType: MLMultiArrayDataType.float32)
             let prediction = try model.prediction(bidirectional_1_input: mlArr )
-             print(prediction.Identity , prediction.featureNames, prediction.featureValue(for: "abc"))
+        //     print(prediction.Identity , prediction.featureNames, prediction.featureValue(for: "abc"))
              var arrOfInput = [SugarCalculation2Input]()
-             var glucozData =  [207,211, 208, 203, 201, 204, 203, 194, 190, 184, 173, 170 ]
+             let glucozData =  [207,211, 208, 203, 201, 204, 203, 194, 190, 184, 173, 170 ]
             var sensorGlucozData = [Int]()
            
              if sensor != nil{
                  if sensor.history.isEmpty == false {
                      if sensor.history.count > 0 {
-                         var integer = sensor.history.map{$0.value}
+                         let integer = sensor.history.map{$0.value}
                          sensorGlucozData = [integer , glucozData ].reduce([], +)
                      }
                     

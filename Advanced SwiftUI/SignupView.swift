@@ -291,12 +291,12 @@ struct SignupView: View {
             }
         } else {
             ref.child("users/\(user.uid)").getData(completion:  { error, snapshot in
-            //    guard error == nil else {
-//                    alertTitle = "Could not save user data"
-//                    alertMessage = error!.localizedDescription
-//                    showAlertToggle.toggle()
-//                    return;
-              //  }
+                guard error == nil else {
+                    alertTitle = "Could not save user data"
+                    alertMessage = error!.localizedDescription
+                    showAlertToggle.toggle()
+                    return;
+                }
                 saveCurrentUserContext(user) {
                     UserDefaults.standard.setValue(true, forKey: IsLoggedIn_STR)
                     toggleView.toggle()

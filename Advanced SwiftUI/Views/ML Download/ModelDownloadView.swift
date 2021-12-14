@@ -90,13 +90,16 @@ extension ModelDownloadView {
         }
         .accentColor(.white)
         .onReceive(NotificationCenter.default.publisher(for: NSNotification.ModelDownloaded)) { obj in
-            let modelLink = RCValues.sharedInstance.value(forKey: .modelLink)
+            let modelLink = "https://drive.google.com/file/d/1XHZJbY-ZdASP2MH_UL9k8zPNdsCgZZ6m/view?usp=sharing" //RCValues.sharedInstance.value(forKey: .modelLink) 
             let modelVersion = RCValues.sharedInstance.value(forKey: .modelVersion)
             print(modelLink)
             if let ml = URL(string: modelLink) {
                 do {
                     try ml.download(to: .documentDirectory) { url, error in
-                        guard let url = url else { return }
+                        guard let url = url else {
+                            return
+                            
+                        }
                         // MARK:- Downloaded ML Locally
                         
                         print("Downloaded URL of ML Model")
