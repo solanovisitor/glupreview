@@ -201,7 +201,7 @@ class NFCReader: NSObject, ObservableObject, NFCTagReaderSessionDelegate , NFCND
         
         
         
-        ChartView(tempData: [ 194, 190, 184, 173, 170,207,211, 208, 203, 201, 204, 203])
+       // ChartView(tempData: [ 194, 190, 184, 173, 170,207,211, 208, 203, 201, 204, 203])
     }
 
     func tagReaderSession(_ session: NFCTagReaderSession, didDetect tags: [NFCTag]) {
@@ -511,10 +511,23 @@ class NFCReader: NSObject, ObservableObject, NFCTagReaderSessionDelegate , NFCND
                             session.invalidate(errorMessage: "\(error.localizedDescription)")
                         }
                         
-                        
+                        let tagUIDData = tag.identifier
+                        var byteData: [UInt8] = []
+                        tagUIDData.withUnsafeBytes { byteData.append(contentsOf: $0) }
+                        var uidString = ""
+                        for byte in byteData {
+                            let decimalNumber = String(byte, radix: 16)
+                            if (Int(decimalNumber) ?? 0) < 16 {
+                                uidString.append("0\(decimalNumber)")
+                            } else {
+                                uidString.append(decimalNumber)
+                            }
+                        }
                         print("Previous History",sensor.history)
                         print("Current Glucose Data",sensor.currentGlucose ,sensor.$currentGlucose)
-                         
+                        if sensor.currentGlucose > 0{
+                            await ChartView(data: ChartView.weekOfData(), tempData: [sensor.currentGlucose])
+                        }
                         
                     }
                     

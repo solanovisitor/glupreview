@@ -16,7 +16,7 @@ struct ChartView:View {
     
    @EnvironmentObject var history: History
     
-    @Published var tempData : [Int] = []
+    var tempData : [Int] = []
     
    var body: some View {
         GeometryReader { geometry in
@@ -123,7 +123,9 @@ struct ChartView:View {
             let prediction = try model.prediction(bidirectional_1_input: mlArr )
         //     print(prediction.Identity , prediction.featureNames, prediction.featureValue(for: "abc"))
              var arrOfInput = [SugarCalculation2Input]()
-             let glucozData = $tempData // [207,211, 208, 203, 201, 204, 203, 194, 190, 184, 173, 170]
+             
+             
+             let glucozData =  [207,211, 208, 203, 201, 204, 203, 194, 190, 184, 173, 170] //$tempData // [207,211, 208, 203, 201, 204, 203, 194, 190, 184, 173, 170]
             var sensorGlucozData = [Int]()
            
              if sensor != nil{
@@ -231,18 +233,18 @@ struct ChartView:View {
                 .map(\.value)
                 .sink { value in
                     var dotStyle: DotStyle
-//                    if value < 10_000 {
-//                        dotStyle = DotStyle(fillColour: .red)
-//                    } else if value >= 10_000 && value <= 15_000 {
-//                        dotStyle = DotStyle(fillColour: .blue)
-//                    } else {
-//                        dotStyle = DotStyle(fillColour: .green)
-//                    }
-                    if value > 0 {
-                        dotStyle = DotStyle(fillColour: Colors.GradientUpperOrange  )
+                    if value < 10_000 {
+                        dotStyle = DotStyle(fillColour: .red)
+                    } else if value >= 10_000 && value <= 15_000 {
+                        dotStyle = DotStyle(fillColour: .blue)
                     } else {
                         dotStyle = DotStyle(fillColour: .green)
                     }
+//                    if value > 0 {
+//                        dotStyle = DotStyle(fillColour: Colors.GradientUpperOrange  )
+//                    } else {
+//                        dotStyle = DotStyle(fillColour: .green)
+//                    }
                     withAnimation(.linear(duration: 0.6)) {
                         chartData.chartStyle.markerType = .vertical(attachment: .line(dot: .style(dotStyle)))
                     }
